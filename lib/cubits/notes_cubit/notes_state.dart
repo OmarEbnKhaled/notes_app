@@ -10,11 +10,11 @@ final class NotesLoading extends NotesState {}
 final class NotesSuccess extends NotesState {
   final List<NoteModel> notes;
 
-  NotesSuccess({required this.notes});
+  NotesSuccess(this.notes);
 }
 
 final class NotesFailure extends NotesState {
   final String errorMessage;
 
-  NotesFailure({required this.errorMessage});
+  NotesFailure(this.errorMessage);
 }

@@ -26,7 +26,16 @@ class NoteModelAdapter extends TypeAdapter<NoteModel> {
 
   @override
   void write(BinaryWriter writer, NoteModel obj) {
-    writer.writeByte(0);
+    writer
+      ..writeByte(4)
+      ..writeByte(0)
+      ..write(obj.title)
+      ..writeByte(1)
+      ..write(obj.subTitle)
+      ..writeByte(2)
+      ..write(obj.data)
+      ..writeByte(3)
+      ..write(obj.color);
   }
 
   @override
